@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title>New Site</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'IBM Plex Mono';
+            background: #fff0cb; 
+            color: #000;
+            cursor: default;
+            transition: .3s;
+        }
+
+        input {
+            outline: none!important;
+            border: unset!important;
+            border-radius: 0;
+        }
+
+        .subLink, .subLinkEnd {
+            color: #000!important;
+            display: inline;
+            text-decoration: none;
+        }
+
+        .subLink:hover, .subLinkEnd:hover, .settingsIcon:hover {
+            color: #0000007a!important;
+        }
+
+        .subLink:after {
+            content: ', ';
+        }
+
+        .settingsIcon {
+            transition: .3s;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer
+        }
+
+        #slideContainer {
+            z-index: 9;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            height: 800px;
+            background: #222;
+            border-right: 5px solid #000000ad;
+            color: #fff;
+            transition: .3s;
+        }
+
+        #userInput, #userPass {
+            position: relative;
+            display: inline-block;
+            font-family: 'IBM Plex Mono';
+            width: 230px;
+            margin: 5px;
+            background: rgba(255, 255, 255, 0.301);
+            color: white;
+            transition: .3s;
+        }
+
+        #userInput:focus-within {
+            border-left: 3px solid #d8f3ff!important;
+        }
+
+        #userPass:focus-within {
+            border-left: 3px solid #ffc4c4!important;
+        }
+
+        #textContain {
+            text-align: center;
+        }
+
+        #userLoginContainer {
+            position: relative;
+            top: 10px;
+            left: 25px;
+        }
+
+        #userLogin, #userRegis {
+            background: black;
+            padding: 5px 15px;
+            width: 100px;
+            color: white;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        #userLogin:hover, #userRegis:hover {
+            background: #2c2c2c;
+        }
+
+        button {
+            outline: unset;
+            border: none;
+            font-family: 'Ubuntu', 'IBM Plex Mono', sans;
+        }
+
+        #buttonContainer {
+            position: relative;
+            left: 15px;
+        }
+
+        #windowClose {color: #0000; position: fixed; width: 1780px; height: 1080px; display: none; background: rgba(0, 0, 0, 0); z-index: 8}
+
+    </style>
+
+</head>
+
+<body scroll="no" style="overflow: hidden; user-select: none;">
+
+    <div id="windowClose" onclick=reslide()> a </div>
+
+    <div id="slideContainer">
+
+        <div id="userLoginContainer"> 
+            <input id="userInput" placeholder="..." spellcheck="false"> </input>
+            <input id="userPass" placeholder="..." spellcheck="false" type="password"> </input> 
+            
+            <div id="buttonContainer"> 
+                <button id="userRegis"  onclick=reslide()> register </button>
+                <button id="userLogin"  onclick=reslide()> login </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+<div id="textContain"> 
+    <h1 id="siteTitle"> mizumi.io </h1>
+    <div id="siteSub"> 
+        <a class="subLink" href="about.html"> about</a>
+        <a class="subLink" href="krunker.html"> krunker</a>
+        <a class="subLink" href="socials.html"> socials</a>
+        <a class="subLinkEnd" href="args.html"> args</a>
+    </div>
+</div>
+
+    <span class="material-icons settingsIcon" onclick=slide()>settings</span> 
+
+
+
+    <script> 
+        var slideContainer = document.getElementById("slideContainer");
+        var settingsIcon = document.querySelector(".settingsIcon");
+        var windowClose = document.getElementById("windowClose");
+
+            function slide() {
+                slideContainer.style.left = ('0');
+                windowClose.style.display = ('block');
+                document.body.style.backgroundColor = ('#9b9179');
+                document.getElementById('textContain').style.filter = ('blur(3px)');
+                settingsIcon.style.filter = ('blur(3px)')
+            }
+
+            function reslide() {
+                slideContainer.style.left = ('-100%');
+                windowClose.style.display = ('none')
+                document.body.style.backgroundColor = ('#fff0cb');
+                document.getElementById('textContain').style.filter = ('blur(0px)');
+                settingsIcon.style.filter = ('blur(0)')
+            }
+    </script>
+
+</body>
+</html>

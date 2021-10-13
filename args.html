@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>New Site</title>
+    <style>
+
+@keyframes glitchOut {
+    0% {text-shadow: -2px 0 cyan}
+        20% {text-shadow: 2px 1px #b400ff}
+            40% {text-shadow: -2px -1px #fc00ff}
+                60% {text-shadow: 2px 2px cyan}
+                    80% {text-shadow: -1px 2px #00a0ff}
+                        100% {text-shadow: 1px -2px #e01cf3}
+}
+
+        #siteTitle {
+            text-align: center;
+            font-size: 36px;
+            animation: glitchOut .5s infinite;
+            text-decoration: unset!important
+        }
+
+        #siteContain {
+            text-align: center;
+        }
+        
+        body {
+            font-family: 'IBM Plex Mono';
+            background: #211e24; 
+            color: #000;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="siteContain">
+    <a id="siteTitle" style="color: white;" href="index.html"> mizumi.io </a>
+    <div id="siteSub"> 
+        <div id="argSched" style="color: white; border-bottom: 2.5px solid white; padding:5px"> Upcoming Args </div>
+    </div>
+
+</div>
+</body>
+
+<script> 
+    getQuote();
+</script>
+
+
+</html>
